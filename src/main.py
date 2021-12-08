@@ -7,9 +7,9 @@
 import numpy as np
 import torch
 from torch import nn
-from src.utils import *
-from src.train import *
-from src.network import *
+from utils import *
+from train import *
+from network import *
 
 data_root = "../data/"
 data_files = ["GIL_negative.txt", "GIL_positive.txt", "NLV_negative.txt", "NLV_positive.txt"]

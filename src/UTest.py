@@ -6,7 +6,7 @@
 
 import torch
 from sklearn.metrics import roc_auc_score
-from src.utils import *
+from utils import *
 import math
 import numpy as np
 import random

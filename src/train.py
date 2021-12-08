@@ -8,7 +8,7 @@ import torch
 import numpy as np
 from torch.utils import data
 from sklearn.metrics import roc_auc_score
-from src.utils import *
+from utils import *
 
 def load_array(data_arrays, batch_size, is_train=True):
     dataset = data.TensorDataset(*data_arrays)
