@@ -5,6 +5,7 @@
 # @Software: PyCharm
 
 import torch
+import numpy as np
 
 amino_acids = ['A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V']
 
@@ -95,9 +96,18 @@ def EncodeBlosum50(data_path, sample_type):
 
     return torch.tensor(X), y
 
+def Shuffle(a, b):
+    state = np.random.get_state()
+    np.random.shuffle(a.cpu().detach().numpy())
+    np.random.set_state(state)
+    np.random.shuffle(b.cpu().detach().numpy())
+
+    return torch.tensor(a), torch.tensor(b)
+
 # : implement k-fold for the given data
 def GetKfoldData(k, i, X, y):
     assert k > 1
+    X, y = Shuffle(X, y)
     fold_size = X.shape[0] // k
     X_train, y_train = None, None
     X_valid, y_valid = None, None

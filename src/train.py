@@ -46,8 +46,9 @@ def kFold(model, k, train_features, train_labels, optimizer, loss, num_epochs, l
         net = model
         print("Fold %d: " % (i + 1))
         net = train(net, X_train, y_train, optimizer, loss, num_epochs, lr, batch_size, device)
-        y_pred = net(X_valid)
-        auc = roc_auc_score(y_valid, y_pred)
+        X_valid = X_valid.to(device)
+        y_pred = net(X_valid).cpu()
+        auc = roc_auc_score(y_valid.detach().numpy(), y_pred.detach().numpy())
         print("AUC score:", auc)
         auc_scores.append(auc)
     for i in range(k):

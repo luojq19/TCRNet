@@ -8,6 +8,8 @@ import torch
 from sklearn.metrics import roc_auc_score
 from src.utils import *
 import math
+import numpy as np
+import random
 
 # a = torch.tensor([[1, 1, 1], [1, 1, 1]])
 # b = torch.tensor([[2, 2, 2], [2, 2, 2]])
@@ -65,10 +67,10 @@ import math
 # print(len(X), len(y))
 # print(X[0], y[0])
 
-outputs = torch.tensor([0.85, 0.91, 0.77, 0.72, 0.61, 0.48, 0.33, 0.42])
-labels = torch.tensor([0., 1., 1., 1., 0., 1., 0., 0.])
-# # auc = roc_auc_score(truth, pred)
-# # print(auc)
+# outputs = torch.tensor([[0.85], [0.91], [0.77], [0.72], [0.61], [0.48], [0.33], [0.42]])
+# labels = torch.tensor([[0.], [0.], [0.], [0.], [0.], [0.], [0.], [0.]])
+# auc = roc_auc_score(labels, outputs)
+# print(auc)
 # print(torch.tensor([1., 2., 3.]).mean().item())
 # a = torch.zeros(2)
 # b = torch.ones(3)
@@ -76,6 +78,18 @@ labels = torch.tensor([0., 1., 1., 1., 0., 1., 0., 0.])
 # x = [1, 1]
 # # print(torch.tensor(x).shape, torch.tensor([x]).shape)
 # print(torch.clamp(torch.tensor([-1.5, 0, 1.5]), min=0, max=1))
-print((outputs - labels).abs())
-print((outputs - labels).abs()<0.5)
-print(float(((outputs - labels).abs() < 0.5).sum().item()))
+# print((outputs - labels).abs())
+# print((outputs - labels).abs()<0.5)
+# print(float(((outputs - labels).abs() < 0.5).sum().item()))
+# l = [[1, 2], [3, 4], [5, 6]]
+# random.shuffle(l)
+# print(l)
+a = np.arange(10).reshape((5, 2))
+b = np.arange(5)
+print(a, b)
+state = np.random.get_state()
+np.random.shuffle(a)
+print(a)
+np.random.set_state(state)
+np.random.shuffle(b)
+print(b)
