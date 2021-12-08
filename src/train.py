@@ -32,7 +32,7 @@ def train(model, train_features, train_labels, optimizer, loss, num_epochs, lr, 
             optimizer.step()
 
             sum_loss += l.item()
-            train_correct += ((outputs - 0.5) * labels).sum().item()
+            train_correct += float(((outputs - labels).abs() < 0.5).sum().item())
 
         print('[%d,%d] loss:%.03f' % (epoch + 1, num_epochs, sum_loss * batch_size / len(train_features)))
         print('        correct:%.03f%%' % (100 * train_correct / len(train_features)))

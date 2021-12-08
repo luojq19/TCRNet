@@ -65,13 +65,17 @@ import math
 # print(len(X), len(y))
 # print(X[0], y[0])
 
-# pred = torch.tensor([0.85, 0.91, 0.77, 0.72, 0.61, 0.48, 0.33, 0.42])
-# # truth = torch.tensor([0., 1., 1., 1., 0., 1., 0., 0.])
+outputs = torch.tensor([0.85, 0.91, 0.77, 0.72, 0.61, 0.48, 0.33, 0.42])
+labels = torch.tensor([0., 1., 1., 1., 0., 1., 0., 0.])
 # # auc = roc_auc_score(truth, pred)
 # # print(auc)
 # print(torch.tensor([1., 2., 3.]).mean().item())
 # a = torch.zeros(2)
 # b = torch.ones(3)
 # print(torch.cat([b, b]))
-x = [1, 1]
-print(torch.tensor(x).shape, torch.tensor([x]).shape)
+# x = [1, 1]
+# # print(torch.tensor(x).shape, torch.tensor([x]).shape)
+# print(torch.clamp(torch.tensor([-1.5, 0, 1.5]), min=0, max=1))
+print((outputs - labels).abs())
+print((outputs - labels).abs()<0.5)
+print(float(((outputs - labels).abs() < 0.5).sum().item()))
