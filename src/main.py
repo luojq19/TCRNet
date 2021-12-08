@@ -21,6 +21,11 @@ GIL_neg_feature, GIL_neg_label = EncodeOneHot(data_root + data_files[0], sample_
 NLV_pos_feature, NLV_pos_label = EncodeOneHot(data_root + data_files[3], sample_type="positive")
 NLV_neg_feature, NLV_neg_label = EncodeOneHot(data_root + data_files[2], sample_type="negative")
 
+# GIL_pos_feature, GIL_pos_label = EncodeBlosum50(data_root + data_files[1], sample_type="positive")
+# GIL_neg_feature, GIL_neg_label = EncodeBlosum50(data_root + data_files[0], sample_type="negative")
+# NLV_pos_feature, NLV_pos_label = EncodeBlosum50(data_root + data_files[3], sample_type="positive")
+# NLV_neg_feature, NLV_neg_label = EncodeBlosum50(data_root + data_files[2], sample_type="negative")
+
 GIL_features = torch.cat((GIL_pos_feature, GIL_neg_feature))
 GIL_labels = torch.cat([GIL_pos_label, GIL_neg_label])
 
@@ -33,10 +38,11 @@ NLV_labels = torch.cat([NLV_pos_label, NLV_neg_label])
 # input()
 
 # Define model
-model = TCRNet()
+# model = TCRNet()
+model = TCRNet2()
 
 # Hyperparameters
-num_epochs = 10
+num_epochs = 100
 batch_size = 64
 lr = 0.001
 loss = nn.MSELoss()
@@ -47,9 +53,13 @@ k = 5
 
 print("Begin training on", device)
 print("5 fold training and validation for GIL: ")
-kFold(model, k, GIL_features, GIL_labels, optimizer, loss, num_epochs, lr, batch_size, device)
+GIL_auc_scores = kFold(model, k, GIL_features, GIL_labels, optimizer, loss, num_epochs, lr, batch_size, device)
 
 print("5 fold training and validation for NLV: ")
-kFold(model, k, NLV_features, NLV_labels, optimizer, loss, num_epochs, lr, batch_size, device)
+NLV_auc_scores = kFold(model, k, NLV_features, NLV_labels, optimizer, loss, num_epochs, lr, batch_size, device)
+
+print("Training complete after %d-fold cross validation with %d epochs!" % (k, num_epochs))
+print("GIL average AUC score: %.4f" % (torch.tensor(GIL_auc_scores).mean().item()))
+print("NLV average AUC score: %.4f" % (torch.tensor(NLV_auc_scores).mean().item()))
 
 

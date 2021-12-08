@@ -1,0 +1,19 @@
+GIL:
+Fold 1 AUC score = 0.7602
+Fold 2 AUC score = 0.8038
+Fold 3 AUC score = 0.8800
+Fold 4 AUC score = 0.9521
+Fold 5 AUC score = 0.9819
+Average AUC score = 0.8756
+
+NLV:
+Fold 1 AUC score = 0.8690
+Fold 2 AUC score = 0.9159
+Fold 3 AUC score = 0.9652
+Fold 4 AUC score = 0.9866
+Fold 5 AUC score = 0.9939
+Average AUC score = 0.9461
+
+Training complete after 5-fold cross validaton with 100 epochs!
+GIL average AUC score: 0.8756
+NLV average AUC score: 0.9461
