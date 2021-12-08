@@ -16,15 +16,15 @@ data_files = ["GIL_negative.txt", "GIL_positive.txt", "NLV_negative.txt", "NLV_p
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # Load training data
-GIL_pos_feature, GIL_pos_label = EncodeOneHot(data_root + data_files[1], sample_type="positive")
-GIL_neg_feature, GIL_neg_label = EncodeOneHot(data_root + data_files[0], sample_type="negative")
-NLV_pos_feature, NLV_pos_label = EncodeOneHot(data_root + data_files[3], sample_type="positive")
-NLV_neg_feature, NLV_neg_label = EncodeOneHot(data_root + data_files[2], sample_type="negative")
+# GIL_pos_feature, GIL_pos_label = EncodeOneHot(data_root + data_files[1], sample_type="positive")
+# GIL_neg_feature, GIL_neg_label = EncodeOneHot(data_root + data_files[0], sample_type="negative")
+# NLV_pos_feature, NLV_pos_label = EncodeOneHot(data_root + data_files[3], sample_type="positive")
+# NLV_neg_feature, NLV_neg_label = EncodeOneHot(data_root + data_files[2], sample_type="negative")
 
-# GIL_pos_feature, GIL_pos_label = EncodeBlosum50(data_root + data_files[1], sample_type="positive")
-# GIL_neg_feature, GIL_neg_label = EncodeBlosum50(data_root + data_files[0], sample_type="negative")
-# NLV_pos_feature, NLV_pos_label = EncodeBlosum50(data_root + data_files[3], sample_type="positive")
-# NLV_neg_feature, NLV_neg_label = EncodeBlosum50(data_root + data_files[2], sample_type="negative")
+GIL_pos_feature, GIL_pos_label = EncodeBlosum50(data_root + data_files[1], sample_type="positive")
+GIL_neg_feature, GIL_neg_label = EncodeBlosum50(data_root + data_files[0], sample_type="negative")
+NLV_pos_feature, NLV_pos_label = EncodeBlosum50(data_root + data_files[3], sample_type="positive")
+NLV_neg_feature, NLV_neg_label = EncodeBlosum50(data_root + data_files[2], sample_type="negative")
 
 GIL_features = torch.cat((GIL_pos_feature, GIL_neg_feature))
 GIL_labels = torch.cat([GIL_pos_label, GIL_neg_label])

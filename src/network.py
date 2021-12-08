@@ -9,6 +9,7 @@ from torch import nn
 from torch.nn import functional as F
 
 # : construct the convolution network
+# This network is a failure ...
 class TCRNet(nn.Module):
     def __init__(self):
         super(TCRNet, self).__init__()
@@ -45,6 +46,7 @@ class TCRNet(nn.Module):
 
         return self.fc(concat.view((-1, 100)))
 
+# This is a successful model
 class TCRNet2(nn.Module):
     def __init__(self):
         super(TCRNet2, self).__init__()

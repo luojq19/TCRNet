@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e24a9e03-7bab-4b66-9aaf-bf14b9a8b625" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +36,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.src">
     <configuration name="UTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hw6" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,7 +151,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638776922975</updated>
-      <workItem from="1638776926868" duration="25454000" />
+      <workItem from="1638776926868" duration="26169000" />
     </task>
     <servers />
   </component>
@@ -183,10 +183,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="383" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1638976254631" />
-    <state x="341" y="164" key="SettingsEditor" timestamp="1638777760434">
+    <state x="341" y="164" key="SettingsEditor" timestamp="1638982969727">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1638777760434" />
+    <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1638982969727" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1638974278468">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

@@ -1,3 +1,4 @@
+Blosum50 encoding, epochs=100, lr=0.001, batch size=64, optimizer=SGD, loss=MSELoss
 GIL:
 Fold 1 AUC score = 0.7602
 Fold 2 AUC score = 0.8038
@@ -17,3 +18,25 @@ Average AUC score = 0.9461
 Training complete after 5-fold cross validaton with 100 epochs!
 GIL average AUC score: 0.8756
 NLV average AUC score: 0.9461
+
+One-hot encoding, other hyperparameters are the same.
+GIL:
+Fold 1 AUC score = 0.6764
+Fold 2 AUC score = 0.7087
+Fold 3 AUC score = 0.7360
+Fold 4 AUC score = 0.7556
+Fold 5 AUC score = 0.7751
+Average AUC score = 0.7303
+
+NLV:
+Fold 1 AUC score = 0.7723
+Fold 2 AUC score = 0.7939
+Fold 3 AUC score = 0.8220
+Fold 4 AUC score = 0.8547
+Fold 5 AUC score = 0.8825
+Average AUC score = 0.8251
+
+Training complete after 5-fold cross validaton with 100 epochs!
+GIL average AUC score: 0.7303
+NLV average AUC score: 0.8251
+
